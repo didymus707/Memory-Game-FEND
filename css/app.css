@@ -72,7 +72,7 @@ h1 {
 
 .deck .card.open {
     transform: perspective(600px) rotateY(0deg);
-    background: #02b3e4;
+    background: #D2B48C;
     cursor: default;
     backface-visibility: hidden;
     transition: transform .5s linear 0s;
@@ -84,8 +84,9 @@ h1 {
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: #008080;
     font-size: 33px;
+    animation: shake 0.5s infinite;
 }
 
 /*
@@ -134,15 +135,14 @@ h1 {
     left: 50%;
     background-color: #f4f4f4;
     padding: 10px;
-    width: 45%;
-    height: 40%;
+    width: 50%;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.17) 0 7px 20px rgba(0,0,0,0.17);
     border-radius: 4px;
     z-index: 1;
     transform: translate(-50%, -70%);
     animation-name: modalOpen;
-    animation-name: shake 0.2s infinite;
-    animation-duration: 1s;
+    animation: shake 0.5s infinite;
+    animation-duration: 2s;
 }
 
 .header{
@@ -155,13 +155,13 @@ h1 {
 }
 
 .closeModal{
-    color: #404040;
+    color: #ffffff;
     width: 50px;
     font-size: 33px;
 }
 
 .closeModal:hover,.closeModal:focus{
-    color: #000;
+    color: #FF1493;
     text-decoration: none;
     cursor: pointer;
 }
@@ -184,12 +184,15 @@ h1 {
     justify-content: space-around;
     padding: 1em;
     z-index: 1;
+    height: 20%;
+    margin: 5px 0 0px 4px;
     background-color: #42ebf4;
     border-radius: 3px;
 }
 
 .modalButton{
     background-color: #F5FFFA;
+    size: 
 }
 
 .hide{
@@ -198,6 +201,14 @@ h1 {
 
 .stars{
     color: #FF3E00FF;
+}
+
+.modalStars li {
+    display: inline;
+    list-style-type: none;
+    color: #FF3E00FF;
+    align-content: center;
+    font-size: 18px;
 }
 
 @keyframes modalOpen{
@@ -209,16 +220,16 @@ h1 {
     0%{
         transform: translate(0px, 0px) rotate(0deg);
     }
-    0%{
+    25%{
         transform: translate(1px, 1px) rotate(1deg);
     }
-    0%{
+    50%{
         transform: translate(-1px, -1px) rotate(-1deg);
     }
-    0%{
+    75%{
         transform: translate(2px, -1px) rotate(2deg);
     }
-    -1deg0%{
+    100%{
         transform: translate(-1px, 1px) rotate(-1deg);
     }
 }

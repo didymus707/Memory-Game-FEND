@@ -33,7 +33,6 @@ let timerID;
  */
 
 shuffleCards();
-  
 
 function shuffleCards() {
     const cardsArray = [...cards];
@@ -195,8 +194,6 @@ function writeStats() {
     const modalTime = document.querySelector('.modalTime');
     const modalStars = document.querySelector('.modalStars');
     const clockOnPage = document.querySelector('.clock').innerHTML;
-    stars.style.color = '#FF3E00FF';
-    stars.style.listStyle = 'none';
     let ratings = stars.innerHTML;
     modalMoves.innerHTML = `${moves} moves`;
     modalTime.innerHTML = `in ${clockOnPage}`;
@@ -255,6 +252,7 @@ function clearStars() {
 }
 
 function clearBoard() {
+    matchedCards = [];
     const cardsArray = [...cards];
     for (const card of cardsArray) {
         card.className = 'card';
